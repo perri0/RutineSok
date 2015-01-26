@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace RutineSøk
 {
     public class Epost
+
     {
         // Listene blir lagt inn i eposten for å lett bli redigert
         // Da trengs begge funksjonene å bli kjørt først
