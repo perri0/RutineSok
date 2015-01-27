@@ -29,7 +29,9 @@ namespace RutineSøk
         {
             PakkseddelLabel.Visible = false;
             pakkseddelsøk.FinneFiler(epost);
-            PakkseddelLabel.Text = "Ferdig";
+            if (pakkseddelsøk.FeilMelding == false)
+            { PakkseddelLabel.Text = "Ferdig"; }
+            else { PakkseddelLabel.Text = "Feilet"; }
             PakkseddelLabel.Visible = true;
             epost.pakkseddelkjørt = true;
         }
