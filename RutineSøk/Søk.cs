@@ -15,20 +15,26 @@ namespace RutineSøk
         public Window()
         {
             InitializeComponent();
+
+            epost = new Epost();
+            shoppasøk = new ShoppaSøk();
+            pakkseddelsøk = new Pakkseddelsøk();
         }
 
-        Pakkseddelsøk pakkseddelsøk = new Pakkseddelsøk();
-        ShoppaSøk shoppasøk = new ShoppaSøk();
-        Epost epost = new Epost();
+        private Pakkseddelsøk pakkseddelsøk;
+        private ShoppaSøk shoppasøk;
+        private Epost epost;
 
         private void button1_Click(object sender, EventArgs e)
         {
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void PakkseddelSøkButton_Click(object sender, EventArgs e)
         {
             PakkseddelLabel.Visible = false;
-            pakkseddelsøk.FinneFiler(epost);
+
+            pakkseddelsøk.PakkseddelSøkFunksjon(epost);
+
             if (pakkseddelsøk.FeilMelding == false)
             { PakkseddelLabel.Text = "Ferdig"; }
             else { PakkseddelLabel.Text = "Feilet"; }
@@ -43,10 +49,10 @@ namespace RutineSøk
 
         private void ShoppaButton_Click(object sender, EventArgs e)
         {
-            //System.Diagnostics.Process.Start(@"\\filserver\ShoppaIntegrasjon\Logg.txt");
-
             ShoppaLabel.Visible = false;
+
             shoppasøk.søk(epost);
+
             ShoppaLabel.Text = "Ferdig";
             ShoppaLabel.Visible = true;
             epost.shoppakjørt = true;

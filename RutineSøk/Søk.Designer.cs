@@ -44,7 +44,7 @@
             this.PakkseddelSøkButton.TabIndex = 1;
             this.PakkseddelSøkButton.Text = "PakkseddelSøk";
             this.PakkseddelSøkButton.UseVisualStyleBackColor = true;
-            this.PakkseddelSøkButton.Click += new System.EventHandler(this.button2_Click);
+            this.PakkseddelSøkButton.Click += new System.EventHandler(this.PakkseddelSøkButton_Click);
             // 
             // PakkseddelLabel
             // 

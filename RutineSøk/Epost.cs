@@ -24,7 +24,7 @@ namespace RutineSøk
 
             if (pakkseddelkjørt == true && shoppakjørt == true)
             {
-                // Splitte pakkseddel listene opp i 2 strings for lettere å bli redigert
+                // Splittet listene opp i 2 strings for lettere å bli redigert
                 string pakkseddelstring = "";
                 foreach (string pakkseddellinje in Pakkseddel)
                 {
@@ -41,11 +41,13 @@ namespace RutineSøk
                 System.Net.Mail.MailAddress mailfrom = new System.Net.Mail.MailAddress("per.oddbjorn@touchsoft.no");
                 mail.From = mailfrom;
                 mail.Subject = "Ukentlig Rutine";
+
                 // Body teksten
                 string mailbody = "trond@touchsoft.no; kristoffer@touchsoft.no" + System.Environment.NewLine + "Vareregister:" + System.Environment.NewLine + pakkseddelstring + System.Environment.NewLine + "Shoppa:" + System.Environment.NewLine +
                     shoppa + System.Environment.NewLine + "Webrapport:" + System.Environment.NewLine + "Hageland:" + System.Environment.NewLine + System.Environment.NewLine + 
                     "Blomsterkroken:";
                 mail.Body = mailbody;
+
                 // Lagrer eposten som fil på skrivebordet for redigering
                 SmtpClient client = new SmtpClient("smtp.domeneshop.no");
                 client.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
