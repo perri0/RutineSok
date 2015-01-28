@@ -65,7 +65,6 @@ namespace RutineSøk
 
         private void Window_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
